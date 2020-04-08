@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:700&display=swap');
+
+/*Задаем для страницы высоту 100% от дисплея пользователя*/
+html, body{
+    height: 100vh;
+}
+
+header, main, footer{
+    padding: 1% 1%;     
+}
+
+nav{
+    background-color: rgb(255, 207, 207)!important;
+}
+
+/*Стиль для навигационной панели*/
+.navigations{    
+    font-family: 'Nunito', sans-serif;
+    font-size: 12pt;
+}
+
+/*Создание контейнеров и вырванивание в них текста внутри блоков по центру*/
+.navbar-collapse, .container-nav, li{
+    display: flex;
+    text-align: center;
+}
+
+/*Выравниваем строки в навигационной панели таким образом, чтобы расстояние между дочерними блоками было одинаковым*/
+.navbar-collapse, .container-nav{
+    justify-content: space-between;
+}
+
+/*Разделение и выравнивание навигационной панели на 2 строки: строка с поиском и строка с навигацией*/
+.navbar-collapse{
+    height: 100%;
+    padding: 0.5% 0%;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/*Отступ поля навигации от логотипа*/
+.container-nav{
+    padding-left: 1%;
+}
+
+/*Главный поиск - регулирование ширины поля ввода относительно дисплея пользователя*/
+.form-control{
+    width: 100%!important;
+}
+
+/*Отделяем поиск и навигационную панель в шапке небольшим отступом*/
+.searchform{
+    padding-bottom: 2vh;
+}
+
+/*Выравнивание элементов внутри списков и ссылок, находящихся в списках, по центру*/
+li, li a{
+    align-items: center;
+    padding-bottom: 0.5%;    
+}
+
+/*Стили для логотипка в шапке сайта*/
+.logo{
+    width: 90px;
+}
+
+/*Стили для иконок*/
+.icon{
+    width: 35px;
+}
+
+/*Стили для счетчика корзины*/
+.countCart{
+    color: #dc3545;
+}
+
+/*Перекрашиваем бутстраповские кнопки*/
+.btn-outline-primary {
+    color: #313A56 !important;
+    background-color: transparent;
+    background-image: none;
+    border-color: #313A56 !important;
+}
+
+.btn-outline-primary:hover {
+    color: #f7f7f7 !important;
+    background-color: #313A56 !important;
+    border-color: #313A56 !important;
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+    box-shadow: 0 0 0 .2rem rgba(49, 58, 86, 0.5) !important;
+}
+
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+    color: #313A56 !important;
+    background-color: transparent
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show>.btn-outline-primary.dropdown-toggle {
+    color: #f7f7f7 !important;
+    background-color: #313A56 !important;
+    border-color: #313A56 !important;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-outline-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(49, 58, 86, 0.5) !important;
+}
