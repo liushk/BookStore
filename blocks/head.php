@@ -8,7 +8,7 @@ class Head{
 
     public function show(){
         echo <<<LABEL
-        <head>
+        <head>            
             <title>{$this->title}</title>
             <meta charset="utf-8">
             <link rel="icon" type="image/ico" href="images/fav.ico">

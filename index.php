@@ -1,3 +1,4 @@
+<?php require_once __DIR__.'/php/db.php';?>
 <!DOCTYPE html>
 <html>
     <?php 
@@ -18,6 +19,12 @@
     <footer class="footer mt-auto py-3">
         <div class="container">
             <span class="text-muted">Place sticky footer content here.</span>
+            <?php
+                //попытка соединиться с БД
+                $db = new Database();
+                $result = $db->getQuery("select * from genre");
+                var_dump($result);
+            ?>
         </div>
     </footer>
 </body>

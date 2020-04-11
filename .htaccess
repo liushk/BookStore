@@ -1,3 +1,63 @@
 DefaultLanguage ru
 AddDefaultCharset UTF-8
-php_flag display_errors 1
+
+# убрать из адресной строки расширение "php"
+RewriteEngine On
+
+RewriteCond %{THE_REQUEST} " (/[^?/]+)\.php"
+RewriteRule ^ %1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)$ /$1.php [L]
+
+# отключение отображения ошибок запуска
+php_flag display_startup_errors off
+
+# отключить отображение всех других ошибок
+php_flag display_errors off
+
+# отключить ошибки html разметки
+php_flag html_errors off
+
+# включить запись ошибок
+php_flag log_errors on
+
+# включить игнорирование повторяющихся ошибок
+php_flag ignore_repeated_errors off
+
+# отключить игнорирование ошибок из уникальных источников
+php_flag ignore_repeated_source off
+
+# включить запись утечек памяти php
+php_flag report_memleaks on
+
+# сохранять большинство последних ошибок через php_errormsg
+php_flag track_errors on
+
+# отключить форматирование справочных ссылок на ошибки
+php_value docref_root 0
+
+# отключить форматирование справочных ссылок на ошибки
+php_value docref_ext 0
+
+# указание пути до файла лога ошибок php
+php_value error_log /MAMP/htdocs/BookShop/logs/phpErrors.log
+
+# указать запись всех ошибок php
+php_value error_reporting 32767
+
+# отключить максимальную длину строки ошибки
+php_value log_errors_max_len 0
+
+# защитить файл журнала ошибок от публичного доступа
+<Files phpErrors.log>
+     Order allow,deny
+     Deny from all
+     Satisfy All
+</Files>
+
+# защитить .htaccess файл
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
