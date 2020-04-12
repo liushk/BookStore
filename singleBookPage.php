@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
     <?php 
-        require_once "blocks/head.php";
+        include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php";
         $title = 'Книга - BookStore';
         $obj = new Head($title);
         $obj->show();
     ?>
 <body>
-    <?php 
-        require_once "blocks/header.php";
-        $obj = new Header;
-        $obj->show();
-    ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT']."/blocks/header.php";?>
     <main class="container">
         <h4>Книга - BookStore</h4>
     </main>

@@ -14,8 +14,6 @@ class Database{
 		//проверяем работоспособность соединения
         if($this->connection->connect_error){
             echo "Ошибка: Невозможно установить соединение с MySQL: " . $this->connection->connect_error;
-		} else{
-			echo "Соединение установлено!";
 		}
 	}
 
@@ -34,7 +32,7 @@ class Database{
 		$result = array();
 		if($data = $this->connection->query($query)){
 			//выбираем данные и помещаем в массив result
-			while ($row = $data->fetch_row()) {
+			while ($row = $data->fetch_assoc()) {
 				$result[] = $row;
 			};
 			//очищаем результирующий набор

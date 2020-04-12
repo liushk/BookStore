@@ -3,6 +3,7 @@
 /*Задаем для страницы высоту 100% от дисплея пользователя*/
 html, body{
     height: 100vh;
+    font-family: 'Nunito', sans-serif;
 }
 
 header, main, footer{
@@ -15,7 +16,6 @@ nav{
 
 /*Стиль для навигационной панели*/
 .navigations{    
-    font-family: 'Nunito', sans-serif;
     font-size: 12pt;
 }
 
@@ -23,6 +23,11 @@ nav{
 .navbar-collapse, .container-nav, li{
     display: flex;
     text-align: center;
+}
+
+.showbooks{
+    display: flex;
+    flex-direction: row;
 }
 
 /*Выравниваем строки в навигационной панели таким образом, чтобы расстояние между дочерними блоками было одинаковым*/
@@ -75,40 +80,95 @@ li, li a{
 }
 
 /*Перекрашиваем бутстраповские кнопки*/
-.btn-outline-primary {
-    color: #313A56 !important;
-    background-color: transparent;
+.btn-primary {
+    color: #ffffff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  .btn-primary:focus,
+  .btn-primary.focus {
+    color: #ffffff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  .btn-primary:hover {
+    color: #ffffff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  .btn-primary:active,
+  .btn-primary.active,
+  .open > .dropdown-toggle.btn-primary {
+    color: #ffffff;
+    background-color: #dc3545;
     background-image: none;
-    border-color: #313A56 !important;
+    border-color: #dc3545;
+  }
+  .btn-primary:active:hover,
+  .btn-primary.active:hover,
+  .open > .dropdown-toggle.btn-primary:hover,
+  .btn-primary:active:focus,
+  .btn-primary.active:focus,
+  .open > .dropdown-toggle.btn-primary:focus,
+  .btn-primary:active.focus,
+  .btn-primary.active.focus,
+  .open > .dropdown-toggle.btn-primary.focus {
+    color: #ffffff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  .btn-primary.disabled:hover,
+  .btn-primary[disabled]:hover,
+  fieldset[disabled] .btn-primary:hover,
+  .btn-primary.disabled:focus,
+  .btn-primary[disabled]:focus,
+  fieldset[disabled] .btn-primary:focus,
+  .btn-primary.disabled.focus,
+  .btn-primary[disabled].focus,
+  fieldset[disabled] .btn-primary.focus {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  .btn-primary .badge {
+    color: #dc3545;
+    background-color:#ffffff;
+  }
+
+.btn-primary:hover{
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
 }
 
-.btn-outline-primary:hover {
-    color: #f7f7f7 !important;
-    background-color: #313A56 !important;
-    border-color: #313A56 !important;
+
+/* Carousel base class */
+.carousel{
+    margin-bottom: 4rem;
 }
 
-.btn-outline-primary:focus,
-.btn-outline-primary.focus {
-    box-shadow: 0 0 0 .2rem rgba(49, 58, 86, 0.5) !important;
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
 }
 
-.btn-outline-primary.disabled,
-.btn-outline-primary:disabled {
-    color: #313A56 !important;
-    background-color: transparent
+/* Declare heights because of positioning of img element */
+.carousel-item {
+    height: 32rem;
 }
 
-.btn-outline-primary:not(:disabled):not(.disabled):active,
-.btn-outline-primary:not(:disabled):not(.disabled).active,
-.show>.btn-outline-primary.dropdown-toggle {
-    color: #f7f7f7 !important;
-    background-color: #313A56 !important;
-    border-color: #313A56 !important;
+.carousel-item > img {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
-.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
-.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .2rem rgba(49, 58, 86, 0.5) !important;
+.bannertext{
+    width: 100%;
+    padding: 1%;
+    margin: 1% 0;
+    border-radius: 4px;
+    background-color: rgba(220, 53, 69, 0.1);
+    backdrop-filter: blur(7px);
 }
