@@ -11,7 +11,10 @@
     <main class="container">
         <h4>Доставка и оплата - BookStore</h4>
     </main>
-    <footer>
-    </footer>
+    <?php 
+        include_once $_SERVER['DOCUMENT_ROOT']."/blocks/footer.php";
+        $obj = new Footer;
+        $obj->show();
+    ?>
 </body>
 </html>

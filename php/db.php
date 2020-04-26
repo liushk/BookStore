@@ -1,10 +1,10 @@
 <?php
 class Database{
-	private $host= 'localhost';
-	private $user= 'root';
-	private $password= 'root';
-	private $db= 'bookshop';
-	private $port= 3307;
+	private $host = 'localhost';
+	private $user = 'root';
+	private $password = 'root';
+	private $db = 'bookshop';
+	private $port= 3306;
 	protected $connection = null;
 	
 	//старт соединения

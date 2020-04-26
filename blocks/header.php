@@ -16,8 +16,8 @@
             <div class="collapse navbar-collapse" id="navbarMain">
                 <div class="searchform">
                     <form class="form-row container-nav">
-                        <div class="col-11"><input class="form-control form-control-sm mr-sm-2" type="text" placeholder="Введите название книги или имя автора..." aria-label="Search"></div>
-                        <div class="col-1"><button class="btn btn-primary btn-sm btn-block" type="submit">Найти</button></div>
+                        <div class="searchformInput"><input class="form-control form-control-sm mr-sm-2" type="text" placeholder="Введите название книги или имя автора..." aria-label="Search"></div>
+                        <div class="searchformBtn"><button class="btn btn-danger btn-sm btn-block" type="submit">Найти</button></div>
                     </form>
                 </div>
                 <div>
@@ -33,7 +33,7 @@
                         </li>
                         <li class="nav-item">
                             <img class="img-fluid d-inline-block align-top icon" src="images/2080086-shopping-mall/png/008-car.png" alt="">
-                            <a class="nav-link" href="deliveryAndPaymentTermsPage.php">Доставка и оплата</a>
+                            <a class="nav-link" href="deliveryAndPaymentTermsPage.php">Получение заказа и оплата</a>
                         </li>
                         <li class="nav-item">
                             <img class="img-fluid d-inline-block align-top icon" src="images/297998-communication-and-media/png/034-mailing-1.png" alt=""> 
@@ -43,51 +43,25 @@
                             <img class="img-fluid d-inline-block align-top icon" src="images/234018-halloween/png/spellbook.png" alt="">
                             <a class="nav-link dropdown-toggle" href="catalogPage.php" id="dropdownBooks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Книги</a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown">
-                                <div class="showbooks">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"><a class="dropdown-item" href="catalogPage.php">Жанры</a></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php for($i = 0; $i < count($genre); $i++){?>
-                                            <tr><td><a class="dropdown-item text-muted" href="catalogPage.php"><?=$genre[$i]['genre']?></a></td></tr>
-                                            <?php }?>
-                                        </tbody>
-                                    </table>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"><a class="dropdown-item" href="catalogPage.php">Издательства</a></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php for($i = 0; $i < count($publisher); $i++){?>
-                                            <tr><td><a class="dropdown-item text-muted" href="catalogPage.php"><?=$publisher[$i]['publisher']?></a></td></tr>
-                                            <?php }?>
-                                        </tbody>
-                                    </table>
+                                <div class="col">
+                                    <div class="row">
+                                        <a class="dropdown-item" href="catalogPage.php">Жанры</a></th>
+                                    </div>
+                                    <?php for($i = 0; $i < count($genre); $i++){?>
+                                        <div class="row"><a class="dropdown-item text-muted" href="catalogPage.php"><?=$genre[$i]['genre']?></a></div>
+                                    <?php }?>
+                                    <div class="row">
+                                        <a class="dropdown-item" href="catalogPage.php">Издательства</a>
+                                    </div>
+                                    <?php for($i = 0; $i < count($publisher); $i++){?>
+                                        <div class="row"><a class="dropdown-item text-muted" href="catalogPage.php"><?=$publisher[$i]['publisher']?></a></div>
+                                    <?php }?>
                                 </div>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <img class="img-fluid d-inline-block align-top icon" src="images/2080086-shopping-mall/png/007-shopping cart.png" alt=""> 
-                            <a class="nav-link dropdown-toggle" href="shoppingCartPage.php" id="dropdownBooks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Корзина<span class="countCart">&nbsp;3</span></a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <a class="nav-link" href="shoppingCartPage.php">Корзина<span class="countCart">&nbsp;3</span></a>
                         </li>
                     </ul>
                 </div>
