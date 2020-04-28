@@ -10,7 +10,7 @@
     ?>
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT']."/blocks/header.php";
-    $slider = $db->getQuery("SELECT * FROM SLIDER S WHERE S.RELEVANCE = 1 ORDER BY S.CREATIONDATE;");?>
+    $slider = $db->getQuery("SELECT * FROM SLIDE S WHERE S.RELEVANCE = 1 ORDER BY S.CREATIONDATE;");?>
     <main role="main" class="container-fluid flex-shrink-0">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -26,7 +26,7 @@
                     } else{ 
                         echo "<div class='carousel-item'>";
                     }?>
-                    <img <?='src="images/' . $slider[$i]['PHOTO'] . '"';?> alt="">                    
+                    <img <?='src="images/slide/' . $slider[$i]['PHOTO'] . '"';?> alt="">                    
                     <div class="container">
                         <div class="carousel-caption text-left">                            
                                 <?php if($slider[$i]['BACKGROUNDTEXT'] == 1){
@@ -52,7 +52,7 @@
                 <span class="sr-only">Вперед</span>
             </a>
         </div>
-        <div class="container">
+        <div class="container contentcontainer">
             <div class="row miniBookFlow">
                 <div class="col">
                     <div class="row miniBookTitle">
@@ -66,7 +66,7 @@
                             <div class="item">                        
                                 <div class="row">
                                     <div class="col">
-                                        <img class="miniBookImg" <?='src="images/books/' . $book->photo . '"';?> alt="">
+                                        <img class="miniBookImg" <?='src="images/book/' . $book->photo . '"';?> alt="">
                                     </div>                            
                                 </div>
                                 <div class="row miniBookText">
@@ -102,7 +102,7 @@
                             <div class="item">                        
                                 <div class="row">
                                     <div class="col">
-                                        <img class="miniBookImg" <?='src="images/books/' . $book->photo . '"';?> alt="">
+                                        <img class="miniBookImg" <?='src="images/book/' . $book->photo . '"';?> alt="">
                                     </div>                            
                                 </div>
                                 <div class="row miniBookText">

@@ -11,18 +11,15 @@
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/header.php";
         require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";
         $book = new Book();
-        $book->getBookInfo(6);
+        $book->getBookInfo(4);
     ?>
     <main class="container">
         <div class="container contentcontainer">
-            <div class="row">          
-                <div class="col bookField">Здесь будут книжные крошки</div>
-            </div>
             <div class="row contentcontainerBook">          
                 <div class="col-5 bookCol">
                     <div class="row">
                         <div class="col containerPhotoBook">
-                            <img class="img-thumbnail bookImg" <?='src="images/books/' . $book->photo . '"';?> alt="">
+                            <img class="img-thumbnail bookImg" <?='src="images/book/' . $book->photo . '"';?> alt="">
                             <button class="btn btn-danger btn-sm" type="submit">Добавить в корзину</button>
                         </div>
                     </div>

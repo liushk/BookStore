@@ -1,308 +1,281 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:700&display=swap');
-
-/*Задаем для страницы высоту 100% от дисплея пользователя*/
-html, body{
-    height: 100%;  
-    font-family: 'Nunito', sans-serif;
-    min-width: 320px;
-}
-
-main{
-    min-height: 70vh;
-    margin-bottom: 2%;
-}
-
-header{
-    z-index: 100;
-    position: sticky;
-    top: 0;
-}
-
-nav{
-    background-color: rgb(255, 207, 207)!important;
-}
-
-footer{
-    height: 6vh;
-    padding: 2vh;
-    background-color: rgba(104, 104, 129, 0.8);
-    color: #fff;
-    font-size: 70%;
-    text-align: left;
-}
-
-.container-fluid{
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.searchformInput{
-    width: 83vw;
-}
-
-.searchformBtn{
-    width: 5vw;
-}
-
-@media (min-width: 300px) {
-    header{   
-        font-size: 14pt;
+/*ОСНОВНЫЕ УНИВЕРСАЛЬНЫЕ ПАРАМЕТРЫ СТРАНИЦЫ*/
+    @import url('https://fonts.googleapis.com/css?family=Nunito:700&display=swap');
+    html, body{
+        height: 100%;  
+        font-family: 'Nunito', sans-serif;
+        min-width: 320px;
     }
-    .searchformInput{
-        width: 70vw;
+    header{
+        z-index: 100;
+        position: sticky;
+        top: 0;
+        font-size: 12pt;
     }
-    .searchformBtn{
-        width: 20vw;
-    }
-    .carousel-item {
+    footer{
+        height: 5vh;
+        padding: 2vh;
+        color: #fff;
+        }
+    footer, .miniBookAutor{
         font-size: 70%;
-        max-height: 300px;
     }
-    .carousel-item > img {
-        margin: auto;
-        position: absolute;
-        top: 0; left: 0; bottom: 0; right: 0;
+    .articleContainer{
+        font-weight: 600;
     }
-}
 
-@media (min-width: 700px) {
-    header{   
-        font-size: 16pt;
+/*ЦВЕТ*/
+    nav, footer, .bookField{
+        background-color: rgba(104, 104, 129) !important;
     }
-    .searchformInput{
-        width: 75vw;
+    .bookRow, .item, .contactUsBlock, .cartRow, .contactUsRow{
+        background-color: rgba(104, 104, 129, 0.05);
     }
-    .searchformBtn{
-        width: 15vw;
+    .miniBookFlow, .myCart{
+        border: 4px solid rgba(104, 104, 129, 0.05);
+    }
+    .miniBookTitle, .miniBookAutor{
+        color: rgb(67, 67, 83);
+    }
+    .countCart{
+        color: rgb(220, 56, 72);
+    }
+    .bannertext{
+        background-color: rgba(104, 104, 129, 0.1);
+    }
+
+/*ИЗОБРАЖЕНИЯ*/
+    .logo {
+        width: 60px;
+    }
+    .icon{
+        width: 40px;
+    }
+    .cartBookImg{
+        object-fit: cover;
+        width: 35px;
+        height: 55px;
+    }
+    .miniBookImg{
+        object-fit: cover;
+        width: 130px;
+        height: 200px;
+    }
+
+/*ПОЛОЖЕНИЕ КНОПКИ НА ОБЪЕКТЕ*/
+    .containerPhotoBook .btn{
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+
+/*КАРТОЧКА ТОВАРА НА ГЛАВНОЙ СТРАНИЦЕ*/
+    .item{
+        padding: 2vw;
+        display: block;
+        margin: 1vh auto;
+        width: 240px;
+        height: 370px;
+        justify-content: space-between;
+        line-height: 1;
+    }
+
+/*СОЗДАНИЕ КОНТЕЙНЕРА*/
+    .navbar-collapse, .container-nav, li, .contentcontainerBook, .bookFieldsContainer, .item, .miniBookFooter{
+        display: flex;
+    }
+
+/*СКРУГЛЕННАЯ РАМКА*/
+    .bannertext, .item, .miniBookFlow, .myCart, .contactUsBlock, .cartRow, .cartMainRow, .contactUsRow{    
+        border-radius: 5px;
+    }
+
+/*НАПРАВЛЕНИЕ ДОЧЕРНИХ ЭЛЕМЕНТОВ*/
+    .bookFieldsContainer, .item{    
+        flex-direction: column;
+    }
+
+/*АБСОЛЮТНАЯ ФИКСАЦИЯ ЭЛЕМЕНТА*/
+    .navbar-nav .dropdown-menu, .containerPhotoBook .btn{
+        position: absolute;
+    }
+
+/*ВНУТРЕННИЙ ОТСТУП*/
+    .contentcontainer{
+        padding: 4vh 0;
+    }
+    .bannertext, .annotationRow, .miniBookFlow, .myCart, .contactUsBlock, .cartRow, .cartMainRow, .contactUsRow{
+        padding: 1%;
+    }
+    .miniBookText{
+        padding: 10px 0; 
+    }
+    .container-fluid{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+/*ВНЕШНИЙ ОТСТУП*/
+    .cartRow, .cartMainRow, .contactUsRow, .bookRow{
+        margin: 1vh 0;
+    }
+    .bannertext{
+        margin: 1% 0;    
+        backdrop-filter: blur(7px);
+    }
+    .miniBookFlow, .articles, .carousel, .myCart{
+        margin-bottom: 4vh;
+    }
+
+/*ВЫРАВНИВАНИЕ ТЕКСТА*/
+    .navbar-collapse, .container-nav, li, .item, .miniBookName, .miniBookAutor, .cartRow, .cartMainRow{
+        text-align: center;
+    }
+    .annotationRow, .bookRow{
+        text-align: justify;
+    }
+
+/*ГОРИЗОНТАЛЬНОЕ ВЫРАВНИВАНИЕ*/
+    .bookFieldsContainer{
+        justify-content: space-around;
+    }
+    .contentcontainerBook{
+        justify-content: center;
+    }
+
+/*ВЕРТИКАЛЬНОЕ ВЫРАВНИВАНИЕ*/
+    .miniBookFooter{
+        align-items: baseline;
+    }
+    li, li a, .bookRow{
+        align-items: center;
+    }
+
+/*ШИРИНА И ВЫСОТА*/
+    header, .form-control, .searchform, .bannertext, .articles{
+        width: 100%!important;
+    }
+    .bookCol{
+        min-width: 300px;
+    }
+    .myCart{
+        min-width: 670px;
     }
     .carousel-item {
-        margin: auto;
-        font-size: 80%;
-        max-height: 450px;
+        height: 75vh;
     }
-}
-
-@media (min-width: 1024px) {
-    header{   
-        font-size: 14pt;
+    main{
+        min-height: 85vh;
     }
-    .searchformInput{
-        width: 75vw;
+
+/*НАСТРОЙКИ ДЛЯ МИНИМАЛЬНОГО РАЗРЕШЕНИЯ ШИРИНЫ 300*/
+    @media (min-width: 300px) {
+        .searchInp{
+            margin-bottom: 1%;
+        }
+        .navbar-collapse, .container-nav{
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .carousel-item {
+            font-size: 70%;
+            max-height: 300px;
+        }
+        .carousel-item > img {
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+        }
+        li, li a{    
+            padding-bottom: 0.5%;
+        }
     }
-    .searchformBtn{
-        width: 10vw;
+
+/*НАСТРОЙКИ ДЛЯ МИНИМАЛЬНОГО РАЗРЕШЕНИЯ ШИРИНЫ 700*/
+    @media (min-width: 700px) {
+        .carousel-item {
+            margin: auto;
+            font-size: 80%;
+            max-height: 450px;
+        }
     }
-    .carousel-item {
-        font-size: 90%;
-        max-height: 500px;
+
+/*НАСТРОЙКИ ДЛЯ МИНИМАЛЬНОГО РАЗРЕШЕНИЯ ШИРИНЫ 1024*/
+    @media (min-width: 1024px) {
+        .navbar-collapse, .container-nav{
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .carousel-item {
+            font-size: 90%;
+            max-height: 500px;
+        }
+        .carousel-item > img {
+            width: 100%;
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+        }
+        .itemMenu{
+            max-width: 30vw;
+        }
+        .searchInp{
+            min-width: 40vh;
+        }
+        .searchBtn{
+            max-width: 10vh;
+        }
+        li, li a{    
+            padding-bottom: 0;
+        }
     }
-    .carousel-item > img {
-        width: 100%;
-        margin: auto;
-        position: absolute;
-        top: 0; left: 0; bottom: 0; right: 0;
+
+/*НАСТРОЙКИ ДЛЯ МИНИМАЛЬНОГО РАЗРЕШЕНИЯ ШИРИНЫ 1200*/
+    @media (min-width: 1200px) {
+        .carousel-item {
+            font-size: 100%;
+            max-height: 600px;
+        }
+        .carousel-item > img {
+            width: 100%;
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+        }
+        
     }
-}
 
-@media (min-width: 1200px) {
-    header{   
-        font-size: 14pt;
-    }
-    .searchformInput{
-        width: 80vw;
-    }
-    .searchformBtn{
-        width: 6vw;
-    }
-    .carousel-item {
-        font-size: 100%;
-        max-height: 600px;
-    }
-    .carousel-item > img {
-        width: 100%;
-        margin: auto;
-        position: absolute;
-        top: 0; left: 0; bottom: 0; right: 0;
-    }
-    
-}
 
-/*Создание контейнеров и вырванивание в них текста внутри блоков по центру*/
-.navbar-collapse, .container-nav, li{
-    display: flex;
-    text-align: center;
-}
 
-/*Выравниваем строки в навигационной панели таким образом, чтобы расстояние между дочерними блоками было одинаковым*/
-.navbar-collapse, .container-nav{
-    justify-content: space-between;
-}
 
-/*Разделение и выравнивание навигационной панели на 2 строки: строка с поиском и строка с навигацией*/
-.navbar-collapse{
-    height: 100%;
-    padding: 0.5% 0%;
-    flex-direction: column;
-    align-items: stretch;
-}
 
-/*Отступ поля навигации от логотипа*/
-.container-nav{
-    padding-left: 1%;
-}
 
-/*Главный поиск - регулирование ширины поля ввода относительно дисплея пользователя*/
-.form-control{
-    width: 100%!important;
-}
 
-/*Отделяем поиск и навигационную панель в шапке небольшим отступом*/
-.searchform{
-    padding-bottom: 1vh;
-    width: 100%;
-}
 
-/*Выравнивание элементов внутри списков и ссылок, находящихся в списках, по центру*/
-li, li a{
-    align-items: center;
-    padding-bottom: 0.5%;    
-}
 
-/*Стили для логотипка в шапке сайта*/
-.logo{
-    width: 90px;
-}
 
-/*Стили для иконок*/
-.icon{
-    width: 35px;
-}
 
-/*Стили для счетчика корзины*/
-.countCart{
-    color: #dc3545;
-}
 
-/* Carousel base class */
-.carousel{
-    margin-bottom: 3rem;
-}
 
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-    bottom: 3rem;
-    z-index: 10;
-}
 
-/* Declare heights because of positioning of img element */
-.carousel-item {
-    height: 32rem;
-}
 
-.bannertext{
-    width: 100%;
-    padding: 1%;
-    margin: 1% 0;
-    border-radius: 4px;
-    background-color: rgba(220, 53, 69, 0.1);
-    backdrop-filter: blur(7px);
-}
 
-.contentcontainer{
-    padding-top: 1%;
-}
 
-.contentcontainerBook{
-    display: flex;
-    justify-content: center;
-}
 
-.bookFieldsContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
 
-.navbar-nav .dropdown-menu{
-    position: absolute;
-}
 
-.bookCol{
-    min-width: 300px;
-}
 
-.annotationRow{
-    padding: 1%;
-    text-align: justify;
-}
 
-.bookField{
-    color: rgba(104, 104, 129);
-}
 
-.bookRow{
-    background-color: rgba(104, 104, 129, 0.05);
-    margin: 1%;
-    text-align: justify;
-    align-items: center;
-}
 
-.containerPhotoBook .btn{
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-}
 
-.item{
-    background-color: rgba(104, 104, 129, 0.05);
-    border-radius: 5px;
-    padding: 2vw;
-    display: block;
-    margin: 1vh auto;
-    width: 240px;
-    height: 370px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    line-height: 1;
-}
 
-.miniBookImg{
-    object-fit: cover;
-    width: 130px;
-    height: 200px;
-}
 
-.miniBookText{
-    padding: 10px 0; 
-}
 
-.miniBookName, .miniBookAutor{
-    text-align: center;    
-}
 
-.miniBookAutor{
-    color:rgb(67, 67, 83);
-    font-size: 70%;
-}
 
-.miniBookFooter{
-    display: flex;
-    align-items: baseline;
-}
 
-.miniBookFlow{
-    border: 4px solid rgba(104, 104, 129, 0.05);
-    margin-bottom: 1%;
-    padding: 1%;
-}
 
-.miniBookTitle{
-    color: rgb(67, 67, 83);
-}
 
 
 

@@ -54,8 +54,7 @@ CREATE TABLE ORDERLINE(
 
 CREATE TABLE ORDERHEADER(
     IDORDER INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    LASTNAME TINYTEXT NOT NULL,
-    FIRSTNAME TINYTEXT NOT NULL,
+    NAME TEXT NOT NULL,
     TELEPHONE TINYTEXT NOT NULL,
     TOTALCOST DOUBLE UNSIGNED NOT NULL DEFAULT 0,
     GETORDERDATE DATE NOT NULL,
@@ -68,7 +67,7 @@ CREATE TABLE USERS(
     PASSWORD VARCHAR(255) NOT NULL UNIQUE
 );
 
-CREATE TABLE SLIDER(
+CREATE TABLE SLIDE(
     IDSLIDER INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     CREATIONDATE TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     TITLE TEXT NOT NULL,
@@ -80,22 +79,22 @@ CREATE TABLE SLIDER(
     PHOTO TEXT
 );
 
-INSERT INTO SLIDER(TITLE, TITLE2, BTN, COLLECTIONLINK, RELEVANCE, PHOTO) VALUES
+INSERT INTO SLIDE(TITLE, TITLE2, BTN, COLLECTIONLINK, RELEVANCE, PHOTO) VALUES
     ("Ребята, приключений час!", 
     "Проведи этот час в нашем уютном BookStore - твоя история тебя ждет!", 
-    "Запускай", "", TRUE, "page4.jpg");
-INSERT INTO SLIDER(TITLE, TITLE2, BTN, COLLECTIONLINK, RELEVANCE, PHOTO) VALUES
+    "Запускай", "", TRUE, "slide4.jpg");
+INSERT INTO SLIDE(TITLE, TITLE2, BTN, COLLECTIONLINK, RELEVANCE, PHOTO) VALUES
     ("Зачем создают правила?", 
     "Чтобы нарушать их и отправляться в потрясающий киберпанк-мир! Переходи на нашу сторону. У нас тут своя атмосфера, космические дирижабли. И межгалактические печеньки (хе-хе)...", 
-    "Дайте одну", "", TRUE, "page8.jpg");
-INSERT INTO SLIDER(TITLE, TITLE2, BTN, COLLECTIONLINK, RELEVANCE, BACKGROUNDTEXT, PHOTO) VALUES
+    "Дайте одну", "", TRUE, "slide8.jpg");
+INSERT INTO SLIDE(TITLE, TITLE2, BTN, COLLECTIONLINK, RELEVANCE, BACKGROUNDTEXT, PHOTO) VALUES
     ("Любовь витает в воздухе", 
     "Закрой глаза и вдохни полной грудью... чувствуешь? Прямо здесь и сейчас наша свежая подборка романов для самых мечтательных читателей из сердца BookStore", 
-    "Покажи", "", TRUE, FALSE, "page10.jpg");
-INSERT INTO SLIDER(TITLE, TITLE2, BTN, COLLECTIONLINK, RELEVANCE, PHOTO) VALUES
+    "Покажи", "", TRUE, FALSE, "slide10.jpg");
+INSERT INTO SLIDE(TITLE, TITLE2, BTN, COLLECTIONLINK, RELEVANCE, PHOTO) VALUES
     ("Весна", 
     "Тихонько бегут ручьи, светит солнышко, на душе распускаются цветы. BookStore считает, что это самое лучшее время, чтобы влюбиться в эти восхитительные произведения, встречай нашу сезонную подборку!", 
-    "Влюбиться", "", TRUE, "page12.jpg");
+    "Влюбиться", "", TRUE, "slide12.jpg");
 
 INSERT INTO GENRE(GENRE) VALUES
     ("Художественная литература"),

@@ -1,8 +1,0 @@
-[12-Apr-2020 09:24:10 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\MAMP\htdocs\BookShop\index.php on line 22
-[12-Apr-2020 09:24:32 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\MAMP\htdocs\BookShop\index.php on line 22
-[12-Apr-2020 09:25:44 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\MAMP\htdocs\BookShop\index.php on line 22
-[12-Apr-2020 09:26:53 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\MAMP\htdocs\BookShop\index.php on line 29
-[12-Apr-2020 09:29:53 UTC] PHP Parse error:  syntax error, unexpected '.' in C:\MAMP\htdocs\BookShop\index.php on line 27
-[12-Apr-2020 09:30:24 UTC] PHP Parse error:  syntax error, unexpected '.' in C:\MAMP\htdocs\BookShop\index.php on line 27
-[12-Apr-2020 09:30:57 UTC] PHP Parse error:  syntax error, unexpected '.' in C:\MAMP\htdocs\BookShop\index.php on line 27
-[12-Apr-2020 09:32:37 UTC] PHP Parse error:  syntax error, unexpected '.' in C:\MAMP\htdocs\BookShop\index.php on line 27
