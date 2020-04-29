@@ -30,12 +30,13 @@
                                 <a class="dropdown-item" href="catalogPage.php">Каталог</a>
                                 <a class="dropdown-item" href="adminPage.php">Админка</a>
                                 <a class="dropdown-item" href="aboutUsPage.php">О нас</a>
+                                <a class="dropdown-item" href="cartPage.php">Корзина</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <img class="img-fluid d-inline-block align-top icon" src="images/icon/book.svg" alt="">
                             <a class="nav-link dropdown-toggle" href="catalogPage.php" id="dropdownBooks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Книги</a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown">
+                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdown">
                                 <div class="col">
                                     <div class="row">
                                         <a class="dropdown-item" href="catalogPage.php">Жанры</a></th>
@@ -54,7 +55,7 @@
                         </li>
                         <li class="nav-item dropdown">                            
                             <img class="img-fluid d-inline-block align-top icon" src="images/icon/cart.svg" alt="">
-                            <a class="nav-link" href="cartPage.php">Корзина</a>
+                            <a class="nav-link" href="cartPage.php"><span class="totalCountMiniCart">Корзина<span></span></a>
                         </li>
                     </ul>
                 </div>

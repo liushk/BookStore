@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
     <?php 
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php";
         require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";
@@ -8,6 +9,8 @@
         $obj = new Head($title);
         $obj->show();
     ?>
+    <script src="js/cart.js" rel="stylesheet"></script>
+</head>
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT']."/blocks/header.php";
     $slider = $db->getQuery("SELECT * FROM SLIDE S WHERE S.RELEVANCE = 1 ORDER BY S.CREATIONDATE;");?>
@@ -66,7 +69,7 @@
                             <div class="item">                        
                                 <div class="row">
                                     <div class="col">
-                                        <img class="miniBookImg" <?='src="images/book/' . $book->photo . '"';?> alt="">
+                                        <a <?='href="singleBookPage.html#' . $book->getId() . '"';?>><img class="miniBookImg" <?='src="images/book/' . $book->photo . '"';?> alt=""></a>
                                     </div>                            
                                 </div>
                                 <div class="row miniBookText">
@@ -77,10 +80,10 @@
                                 </div>
                                 <div class="row miniBookFooter">
                                     <div class="col-5">
-                                        <div class="cost"><?=$book->cost;?> ₽</div>
+                                        <div><?=$book->cost;?> ₽</div>
                                     </div> 
                                     <div class="col-7">
-                                        <button class="btn btn-danger btn-sm add-to-cart" type="submit">В корзину</button>
+                                        <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book->getId() . '"';?> type="submit">В корзину</button>
                                     </div>                            
                                 </div>
                             </div>
@@ -102,7 +105,7 @@
                             <div class="item">                        
                                 <div class="row">
                                     <div class="col">
-                                        <img class="miniBookImg" <?='src="images/book/' . $book->photo . '"';?> alt="">
+                                    <a <?='href="singleBookPage.html#' . $book->getId() . '"';?>><img class="miniBookImg" <?='src="images/book/' . $book->photo . '"';?> alt=""></a>
                                     </div>                            
                                 </div>
                                 <div class="row miniBookText">
@@ -116,7 +119,7 @@
                                         <div class="cost"><?=$book->cost;?> ₽</div>
                                     </div> 
                                     <div class="col-7">
-                                        <button class="btn btn-danger btn-sm add-to-cart" type="submit">В корзину</button>
+                                        <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book->getId() . '"';?> type="submit">В корзину</button>
                                     </div>                            
                                 </div>
                             </div>

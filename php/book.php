@@ -18,7 +18,7 @@ class Book{
     public $authors;
 
     public function getId(){
-		return $this->$id;
+		return $this->id;
 	}
 
     public function setFieldName($field, $value){
@@ -59,5 +59,7 @@ class Book{
             $this->authors = $info[$i]['AUTHORS'];
         }
         else echo "Ошибка! Книги с таким ID не существует.";        
-    }
+    }    
 }
+
+  

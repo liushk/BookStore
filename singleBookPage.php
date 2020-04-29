@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
     <?php
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php";
         $title = 'Книга - BookStore';
         $obj = new Head($title);
         $obj->show();
     ?>
+</head>
 <body>
     <?php
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/header.php";
@@ -20,7 +22,7 @@
                     <div class="row">
                         <div class="col containerPhotoBook">
                             <img class="img-thumbnail bookImg" <?='src="images/book/' . $book->photo . '"';?> alt="">
-                            <button class="btn btn-danger btn-sm" type="submit">Добавить в корзину</button>
+                            <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book->getId() . '"';?> type="submit">Добавить в корзину</button>
                         </div>
                     </div>
                 </div>
@@ -35,7 +37,7 @@
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">ID товара</div>
-                        <div class="col"></div>                
+                        <div class="col"><?=$book->getId();?></div>                
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">Издательство</div>

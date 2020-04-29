@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+<head>
     <?php 
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php";
         $title = 'О магазине - BookStore';
         $obj = new Head($title);
         $obj->show();
     ?>
+</head>
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT']."/blocks/header.php";?>
     <main class="container contentcontainer">
-        <div class="articleContainer">
+        <div class="contentcontainerArticle">
             <div class="row">
                 <div class="col">
                     <h3>Команда "BookStore" приветствует тебя!</h3>                    

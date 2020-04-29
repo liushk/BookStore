@@ -19,18 +19,18 @@
     footer, .miniBookAutor{
         font-size: 70%;
     }
-    .articleContainer{
+    .contentcontainerArticle{
         font-weight: 600;
     }
 
 /*ЦВЕТ*/
-    nav, footer, .bookField{
+    nav, footer{
         background-color: rgba(104, 104, 129) !important;
     }
     .bookRow, .item, .contactUsBlock, .cartRow, .contactUsRow{
         background-color: rgba(104, 104, 129, 0.05);
     }
-    .miniBookFlow, .myCart{
+    .miniBookFlow, .contentcontainerCart{
         border: 4px solid rgba(104, 104, 129, 0.05);
     }
     .miniBookTitle, .miniBookAutor{
@@ -41,6 +41,12 @@
     }
     .bannertext{
         background-color: rgba(104, 104, 129, 0.1);
+    }
+    .totalCountMiniCartStyle{
+        background-color: rgb(220, 56, 72);
+        color: #fff;
+        padding: 0.2vh 1vh;
+        border-radius: 20px;
     }
 
 /*ИЗОБРАЖЕНИЯ*/
@@ -86,7 +92,7 @@
     }
 
 /*СКРУГЛЕННАЯ РАМКА*/
-    .bannertext, .item, .miniBookFlow, .myCart, .contactUsBlock, .cartRow, .cartMainRow, .contactUsRow{    
+    .bannertext, .item, .miniBookFlow, .contentcontainerCart, .contactUsBlock, .cartRow, .cartMainRow, .contactUsRow{    
         border-radius: 5px;
     }
 
@@ -104,7 +110,7 @@
     .contentcontainer{
         padding: 4vh 0;
     }
-    .bannertext, .annotationRow, .miniBookFlow, .myCart, .contactUsBlock, .cartRow, .cartMainRow, .contactUsRow{
+    .bannertext, .annotationRow, .miniBookFlow, .contentcontainerCart, .contactUsBlock, .cartRow, .cartMainRow, .contactUsRow{
         padding: 1%;
     }
     .miniBookText{
@@ -123,7 +129,7 @@
         margin: 1% 0;    
         backdrop-filter: blur(7px);
     }
-    .miniBookFlow, .articles, .carousel, .myCart{
+    .miniBookFlow, .articles, .carousel, .contentcontainerCart{
         margin-bottom: 4vh;
     }
 
@@ -133,6 +139,9 @@
     }
     .annotationRow, .bookRow{
         text-align: justify;
+    }
+    .cartBookName{
+        text-align: left;
     }
 
 /*ГОРИЗОНТАЛЬНОЕ ВЫРАВНИВАНИЕ*/
@@ -158,7 +167,7 @@
     .bookCol{
         min-width: 300px;
     }
-    .myCart{
+    .contentcontainerCart{
         min-width: 670px;
     }
     .carousel-item {
