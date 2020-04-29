@@ -2,9 +2,9 @@
 <html>
 <head>
     <?php 
-        include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php";
-        require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";
-        $title = 'Главная - BookStore';
+        include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php"; 
+        require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";       
+        $title = 'Корзина - BookStore';
         $book = new Book();
         $obj = new Head($title);
         $obj->show();
@@ -22,22 +22,23 @@
                     <div class="col"></div>
                     <div class="col-2">Общая стоимость</div>
                 </div>
+                
                 <div class="placeForCartRows"></div>
                 <div class="row cartMainRow totalCart align-items-center"></div>
             </div>
             <div class="contentcontainerCart">
-                <form>
+                <form action="php/checkout.php" method="post" class="checkoutForm">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Имя и фамилия</label>
-                        <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Введите имя и фамилию получателя заказа" required>
+                        <label for="inputName">Имя и фамилия</label>
+                        <input type="text" name="customerName" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Введите имя и фамилию получателя заказа" required>
                         <small id="nameHelp" class="form-text text-muted">Необходимо показать паспорт при получении заказа для подтверждения личности</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Телефон в формате +7 (ххх) ххх-хх-хх</label>
-                        <input type="tel" pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}" aria-describedby="telHelp" placeholder="+7 (ххх) ххх-хх-хх" class="form-control" id="inputTel" placeholder="+7 (555) 555-55-55" required>
+                        <label for="inputTel">Телефон в формате +7 (ххх) ххх-хх-хх</label>
+                        <input type="tel" name="customerTel" pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}" aria-describedby="telHelp" placeholder="+7 (ххх) ххх-хх-хх" class="form-control" id="inputTel" placeholder="+7 (555) 555-55-55" required>
                         <small id="telHelp" class="form-text text-muted">Наш менеджер перезвонит Вам в течении часа для подтверждения заказа</small>
                     </div>
-                    <button type="submit" class="btn btn-success btn-lg">Оформить заказ</button>
+                    <button type="submit" name="createOrder" class="btn btn-success btn-lg">Оформить заказ</button>
                 </form>
             </div>
         </div>        

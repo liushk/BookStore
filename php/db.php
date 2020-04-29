@@ -30,6 +30,7 @@ class Database{
 		//открываем соединение
 		$this->startConnection();
 		$result = array();
+		//выполняем запрос
 		if($data = $this->connection->query($query)){
 			//выбираем данные и помещаем в массив result
 			while ($row = $data->fetch_assoc()) {
@@ -41,5 +42,15 @@ class Database{
 		//закрываем соединение
 		$this->abortConnection();
 		return $result;
+	}
+	
+	//работа с запросом
+	public function getUpdateOrInsert($query){
+		//открываем соединение
+		$this->startConnection();
+		//выполняем запрос
+		$this->connection->query($query);
+		//закрываем соединение
+		$this->abortConnection();
     }
 }

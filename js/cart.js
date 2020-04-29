@@ -31,14 +31,14 @@ function loadCart(){
         //если есть - расшифровываем и записываем в переменную cart
         cart = JSON.parse(localStorage.getItem('cart'));
         if(isCartEmpty(cart)){
-            $('.emptyCart').html('Корзина пуста!');
+            $('.emptyCart').html('<h4>Корзина пуста!</h4>');
         }
         else{
             showCart();
         }         
     }
     else{ 
-        $('.emptyCart').html('Корзина пуста!');
+        $('.emptyCart').html('<h4>Корзина пуста!</h4>');
     }
 }
 
@@ -71,12 +71,13 @@ function bookOut(data){
     out += '<div class="col-2"><div class="cost">' + (cart[data.IDBOOK] * data.COST) + ' ₽</div></div>';
     $('.cartRow' + data.IDBOOK).html(out);
     cost.set(data.IDBOOK, data.COST);
-    var totalOut = '';
-    totalOut += '<div class="col-8 cartBookName"><h5>Итого</h5></div><div class="col"><span>' + totalCountCart() + '<span></div>';
-    totalOut += '<div class="col"></div><div class="col-2"><div class="cost">' + totalCostCart() + ' ₽</div></div>';
-    $('.totalCart').html(totalOut);
-    var totalMiniCountOut = '<span class="totalCountMiniCartStyle">' + totalCountCart() + '</span>';
-    $('.totalCountMiniCart').html(totalMiniCountOut);
+    out = '';
+    out += '<div class="col-8 cartBookName"><h5>Итого</h5></div><div class="col"><span>' + totalCountCart() + '<span></div>';
+    out += '<div class="col"></div><div class="col-2"><div class="cost">' + totalCostCart() + ' ₽</div></div>';
+    $('.totalCart').html(out);
+    $('.totalCountMiniCart').html('<span class="totalCountMiniCartStyle">' + totalCountCart() + '</span>');
+    $('.checkoutForm').append('<input type=hidden name=' + data.IDBOOK + ' value=' + cart[data.IDBOOK] + '>');
+    $('.checkoutForm').on('submit', dyeCart);
 }
 
 //добавляем товар в корзину
@@ -133,6 +134,13 @@ function isCartEmpty(object){
 //сохраняем изменения в корзине
 function saveCart(){
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+//очищаем корзину
+function dyeCart(){
+    cart = {};
+    saveCart();
+    showCart();
 }
 
 

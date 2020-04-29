@@ -19,7 +19,7 @@
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <?php for($i = 0; $i < count($slider)-1; $i++){?>
-                    <li data-target="#myCarousel" data-slide-to=<?='"' . $i+1 . '"'?>></li>
+                    <li data-target="#myCarousel" data-slide-to=<?='"' . ($i+1) . '"'?>></li>
                 <?php }?>
             </ol>
             <div class="carousel-inner">
