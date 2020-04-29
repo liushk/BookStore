@@ -30,7 +30,6 @@
                                 <a class="dropdown-item" href="catalogPage.php">Каталог</a>
                                 <a class="dropdown-item" href="adminPage.php">Админка</a>
                                 <a class="dropdown-item" href="aboutUsPage.php">О нас</a>
-                                <a class="dropdown-item" href="cartPage.php">Корзина</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">

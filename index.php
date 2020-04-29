@@ -5,7 +5,6 @@
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php";
         require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";
         $title = 'Главная - BookStore';
-        $book = new Book();
         $obj = new Head($title);
         $obj->show();
     ?>
@@ -64,27 +63,27 @@
                         </div>
                     </div>
                     <div class="row">
-                        <?php for($i = 1; $i <= 4; $i++){ $book->getBookInfo($i);?>
+                        <?php for($i = 1; $i <= 4; $i++){ $book = getBookInfo($i);?>
                         <div class="col">
-                            <div class="item">                        
+                            <div class="item">
                                 <div class="row">
                                     <div class="col">
-                                        <a <?='href="singleBookPage.html#' . $book->getId() . '"';?>><img class="miniBookImg" <?='src="images/book/' . $book->photo . '"';?> alt=""></a>
-                                    </div>                            
+                                        <a <?='href="singleBookPage.php?idbook=' . $book[0]['IDBOOK'] . '"';?>><img class="miniBookImg" <?='src="images/book/' . $book[0]['PHOTO'] . '"';?> alt=""></a>
+                                    </div>
                                 </div>
                                 <div class="row miniBookText">
                                     <div class="col">
-                                        <span class="miniBookName"><?=$book->name;?></span><br>
-                                        <span class="miniBookAutor"><?=$book->authors;?></span>
-                                    </div>                            
+                                        <span class="miniBookName"><?=$book[0]['BOOK'];?></span><br>
+                                        <span class="miniBookAutor"><?=$book[0]['AUTHORS'];?></span>
+                                    </div>
                                 </div>
                                 <div class="row miniBookFooter">
                                     <div class="col-5">
-                                        <div><?=$book->cost;?> ₽</div>
+                                        <div><?=$book[0]['COST'];?> ₽</div>
                                     </div> 
                                     <div class="col-7">
-                                        <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book->getId() . '"';?> type="submit">В корзину</button>
-                                    </div>                            
+                                        <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book[0]['IDBOOK'] . '"';?> type="submit">В корзину</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -100,34 +99,34 @@
                         </div>
                     </div>
                     <div class="row">
-                        <?php for($i = 6; $i != 2; $i--){ $book->getBookInfo($i);?>
-                        <div class="col">
-                            <div class="item">                        
+                        <?php for($i = 6; $i != 2; $i--){ $book = getBookInfo($i);?>
+                            <div class="col">
+                            <div class="item">
                                 <div class="row">
                                     <div class="col">
-                                    <a <?='href="singleBookPage.html#' . $book->getId() . '"';?>><img class="miniBookImg" <?='src="images/book/' . $book->photo . '"';?> alt=""></a>
-                                    </div>                            
+                                        <a <?='href="singleBookPage.php?idbook=' . $book[0]['IDBOOK'] . '"';?>><img class="miniBookImg" <?='src="images/book/' . $book[0]['PHOTO'] . '"';?> alt=""></a>
+                                    </div>
                                 </div>
                                 <div class="row miniBookText">
                                     <div class="col">
-                                        <span class="miniBookName"><?=$book->name;?></span><br>
-                                        <span class="miniBookAutor"><?=$book->authors;?></span>
-                                    </div>                            
+                                        <span class="miniBookName"><?=$book[0]['BOOK'];?></span><br>
+                                        <span class="miniBookAutor"><?=$book[0]['AUTHORS'];?></span>
+                                    </div>
                                 </div>
                                 <div class="row miniBookFooter">
                                     <div class="col-5">
-                                        <div class="cost"><?=$book->cost;?> ₽</div>
+                                        <div><?=$book[0]['COST'];?> ₽</div>
                                     </div> 
                                     <div class="col-7">
-                                        <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book->getId() . '"';?> type="submit">В корзину</button>
-                                    </div>                            
+                                        <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book[0]['IDBOOK'] . '"';?> type="submit">В корзину</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <?php }?>               
+                        <?php }?>
                     </div>
                 </div>
-            </div>           
+            </div>
         </div>
     </main>
     <?php 

@@ -54,7 +54,7 @@ function showCart(){
 
 //делаем запрос к серверу, чтобы взять данные единичного экземпляра книни по ее id
 function init(idbook){
-    $.post("php/books.php", {"id" : idbook}, bookOut);
+    $.post("php/book.php", {"id" : idbook}, bookOut);
 }
 
 //парсим данные из БД
@@ -63,7 +63,7 @@ function bookOut(data){
     var out='';
     out += '<div class="col"><button onclick="cartDelete(' + data.IDBOOK + ')" class="btn btn-danger btn-sm itemDel"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="8" height="8" data-icon="x" viewBox="0 0 8 8"><path fill="#ffffff" d="M1.406 0l-1.406 1.406.688.719 1.781 1.781-1.781 1.781-.688.719 1.406 1.406.719-.688 1.781-1.781 1.781 1.781.719.688 1.406-1.406-.688-.719-1.781-1.781 1.781-1.781.688-.719-1.406-1.406-.719.688-1.781 1.781-1.781-1.781-.719-.688z" /></svg></button></div>';
     out += '<div class="col"><img class="cartBookImg" src="images/book/' + data.PHOTO + '" alt=""></div>';
-    out += '<div class="col-4 cartBookName"><span class="cartBookName">"'+ data.BOOK + '" - ' + data.AUTHORS + '</span></div>';
+    out += '<div class="col-4 cartBookName"><a class="text-secondary" href="singleBookPage.php?idbook=' + data.IDBOOK + '" ><span class="cartBookName">"'+ data.BOOK + '" - ' + data.AUTHORS + '</span></a></div>';
     out += '<div class="col"><div class="cost">' + data.COST + ' ₽</div></div>';
     out += '<div class="col"><button onclick="iMinus(' + data.IDBOOK + ')" class="btn btn-danger btn-sm itemMinus"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="8" height="8" data-icon="minus" data-container-transform="translate(0 3)" viewBox="0 0 8 8"><path fill="#ffffff" d="M0 3v2h8v-2h-8z" /></svg></button></div>';
     out += '<div class="col"><span>' + cart[data.IDBOOK] + '<span></div>';

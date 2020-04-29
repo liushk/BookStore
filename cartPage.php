@@ -5,7 +5,6 @@
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php"; 
         require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";       
         $title = 'Корзина - BookStore';
-        $book = new Book();
         $obj = new Head($title);
         $obj->show();
     ?>

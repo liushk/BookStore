@@ -1,6 +1,6 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT']."/php/order.php";
-    require_once $_SERVER['DOCUMENT_ROOT']."/php/books.php";       
+    require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";       
     if(isset($_POST['createOrder'])){
         $customerName = htmlspecialchars($_POST['customerName']);
         $customerTel = htmlspecialchars($_POST['customerTel']);
@@ -18,6 +18,7 @@
         }
         foreach ($bookCount as $key => $value) {
             insertOrderLine($idOrder, $key, getBookCost($key), $value);
+            updateBookPopularity($key);
             $totalCost += getBookCost($key, $value);
         }
         insertOrderHeader($idOrder, $customerName, $customerTel, $totalCost);
