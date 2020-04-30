@@ -12,10 +12,9 @@
     <?php
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/header.php";
         require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";
-        $book = getBookInfo(4);
         //echo '<pre>'; 
         //var_dump($book);
-        //echo '</pre>';        
+        //echo '</pre>'; 
     ?>
     <main class="container">
         <div class="container contentcontainer">
@@ -46,7 +45,7 @@
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">Издательство</div>
-                        <div class="col"><?=$book[0]['BOOK'];?></div>                
+                        <div class="col"><a <?='href="catalogPage.php?idpublisher=' . $book[0]['IDPUBLISHER']  . '"';?> class="text-secondary" ><?=$book[0]['PUBLISHER'];?></a></div>                
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">Год издания</div>
@@ -70,11 +69,11 @@
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">Жанр</div>
-                        <div class="col"><?=$book[0]['GENRE'];?></div>                
+                        <div class="col"><a <?='href="catalogPage.php?idgenre=' . $book[0]['IDGENRE'] . '"';?> class="text-secondary" ><?=$book[0]['GENRE'];?></a></div>                
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">Поджанр</div>
-                        <div class="col"><?=$book[0]['GENRE2'];?></div>                
+                        <div class="col"><a <?='href="catalogPage.php?idgenre=' . $book[0]['IDGENRE'] . '&idgenre2=' . $book[0]['IDGENRE2'] .'"';?> class="text-secondary" ><?=$book[0]['GENRE2'];?></a></div>                
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">В наличии</div>

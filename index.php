@@ -3,8 +3,10 @@
 <head>
     <?php 
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php";
+        require_once $_SERVER['DOCUMENT_ROOT']."/php/db.php";
         require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";
         $title = 'Главная - BookStore';
+        $db = new Database();
         $obj = new Head($title);
         $obj->show();
     ?>
@@ -17,7 +19,7 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <?php for($i = 0; $i < count($slider)-1; $i++){?>
+                <?php for($i = 0; $i < count($slider) - 1; $i++){?>
                     <li data-target="#myCarousel" data-slide-to=<?='"' . ($i+1) . '"'?>></li>
                 <?php }?>
             </ol>
@@ -63,7 +65,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <?php for($i = 1; $i <= 4; $i++){ $book = getBookInfo($i);?>
+                        <?php
+                        $bookPop = sortBookDate("DESC");
+                         for($i = 0; $i != 4; $i++){ $book = getBookInfo($bookPop[$i]['IDBOOK']);?>
                         <div class="col">
                             <div class="item">
                                 <div class="row">
@@ -99,7 +103,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <?php for($i = 6; $i != 2; $i--){ $book = getBookInfo($i);?>
+                        <?php
+                        $bookPop = sortBookPopularity("DESC");
+                         for($i = 0; $i != 4; $i++){ $book = getBookInfo($bookPop[$i]['IDBOOK']);?>
                             <div class="col">
                             <div class="item">
                                 <div class="row">
