@@ -48,6 +48,11 @@
         padding: 0.2vh 1vh;
         border-radius: 20px;
     }
+    .dropdown-item.active, .dropdown-item:active {
+        color: #fff;
+        text-decoration: none;
+        background-color: rgba(104, 104, 129, 0.5);
+    }
 
 /*ИЗОБРАЖЕНИЯ*/
     .logo {
@@ -66,6 +71,9 @@
         width: 130px;
         height: 200px;
     }
+    .catalogIcon{
+        height: 3vh;
+    }
 
 /*ПОЛОЖЕНИЕ КНОПКИ НА ОБЪЕКТЕ*/
     .containerPhotoBook .btn{
@@ -79,11 +87,12 @@
     .item{
         padding: 2vw;
         display: block;
-        margin: 1vh auto;
+        margin: 1vh 0;
         width: 240px;
         height: 370px;
         justify-content: space-between;
         line-height: 1;
+        flex-grow: 0;
     }
 
 /*СОЗДАНИЕ КОНТЕЙНЕРА*/
@@ -119,6 +128,12 @@
     .container-fluid{
         padding-left: 0;
         padding-right: 0;
+    }
+    .contentcontainerCatalog{
+        padding: 0 2vw;
+    }
+    .sortRow, .sortTitle{
+        padding-bottom: 1vh;
     }
 
 /*ВНЕШНИЙ ОТСТУП*/
@@ -198,6 +213,10 @@
         li, li a{    
             padding-bottom: 0.5%;
         }
+        .sortRow, .sortCatalog{
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
 /*НАСТРОЙКИ ДЛЯ МИНИМАЛЬНОГО РАЗРЕШЕНИЯ ШИРИНЫ 700*/
@@ -206,6 +225,9 @@
             margin: auto;
             font-size: 80%;
             max-height: 450px;
+        }
+        .sortRow, .sortCatalog{
+            flex-direction: row;
         }
     }
 
@@ -237,6 +259,9 @@
         li, li a{    
             padding-bottom: 0;
         }
+        .sortCatalog{
+            align-items: flex-start;
+        }
     }
 
 /*НАСТРОЙКИ ДЛЯ МИНИМАЛЬНОГО РАЗРЕШЕНИЯ ШИРИНЫ 1200*/
@@ -251,9 +276,14 @@
             position: absolute;
             top: 0; left: 0; bottom: 0; right: 0;
         }
-        
     }
 
+.sortCol{
+    min-width: 240px;
+}
+.genre2{
+    margin-left: 10px;
+}
 
 
 

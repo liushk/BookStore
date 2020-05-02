@@ -3,10 +3,8 @@
 <head>
     <?php 
         include_once $_SERVER['DOCUMENT_ROOT']."/blocks/head.php";
-        require_once $_SERVER['DOCUMENT_ROOT']."/php/db.php";
         require_once $_SERVER['DOCUMENT_ROOT']."/php/book.php";
         $title = 'Главная - BookStore';
-        $db = new Database();
         $obj = new Head($title);
         $obj->show();
     ?>
@@ -14,7 +12,7 @@
 </head>
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT']."/blocks/header.php";
-    $slider = $db->getQuery("SELECT * FROM SLIDE S WHERE S.RELEVANCE = 1 ORDER BY S.CREATIONDATE;");?>
+    $slider = getSliders();?>
     <main role="main" class="container-fluid flex-shrink-0">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -41,7 +39,7 @@
                                 <h4><?=$slider[$i]['TITLE']?></h4>
                                 <p><?=$slider[$i]['TITLE2']?></p>
                             </div>
-                            <p><a class="btn btn-danger" href="#" role="button"><?=$slider[$i]['BTN']?></a></p>                                                      
+                            <p><a class="btn btn-danger" <?='href="catalogPage.php' . $slider[$i]['COLLECTIONLINK'] .'"';?> role="button"><?=$slider[$i]['BTN']?></a></p>                                                      
                         </div>
                     </div>
                 </div>
@@ -67,7 +65,7 @@
                     <div class="row">
                         <?php
                         $bookPop = sortBookDate("DESC");
-                         for($i = 0; $i != 4; $i++){ $book = getBookInfo($bookPop[$i]['IDBOOK']);?>
+                         for($i = 0; $i != 4; $i++){ $book = getBook($bookPop[$i]['IDBOOK']);?>
                         <div class="col">
                             <div class="item">
                                 <div class="row">
@@ -77,7 +75,7 @@
                                 </div>
                                 <div class="row miniBookText">
                                     <div class="col">
-                                        <span class="miniBookName"><?=$book[0]['BOOK'];?></span><br>
+                                        <a class="text-dark" <?='href="singleBookPage.php?idbook=' . $book[0]['IDBOOK'] . '"';?><span class="miniBookName"><?=$book[0]['BOOKNAME'];?></span></a><br>
                                         <span class="miniBookAutor"><?=$book[0]['AUTHORS'];?></span>
                                     </div>
                                 </div>
@@ -105,7 +103,7 @@
                     <div class="row">
                         <?php
                         $bookPop = sortBookPopularity("DESC");
-                         for($i = 0; $i != 4; $i++){ $book = getBookInfo($bookPop[$i]['IDBOOK']);?>
+                         for($i = 0; $i != 4; $i++){ $book = getBook($bookPop[$i]['IDBOOK']);?>
                             <div class="col">
                             <div class="item">
                                 <div class="row">
@@ -115,7 +113,7 @@
                                 </div>
                                 <div class="row miniBookText">
                                     <div class="col">
-                                        <span class="miniBookName"><?=$book[0]['BOOK'];?></span><br>
+                                        <a class="text-dark" <?='href="singleBookPage.php?idbook=' . $book[0]['IDBOOK'] . '"';?><span class="miniBookName"><?=$book[0]['BOOKNAME'];?></span></a><br>
                                         <span class="miniBookAutor"><?=$book[0]['AUTHORS'];?></span>
                                     </div>
                                 </div>

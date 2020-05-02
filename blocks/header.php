@@ -23,32 +23,11 @@
                     <ul class="navbar-nav container-nav">
                         <li class="nav-item dropdown">
                             <img class="img-fluid d-inline-block align-top icon" src="images/icon/moon.svg" alt="">
-                            <a class="nav-link dropdown-toggle" href="aboutUsPage.php" id="dropdownAboutUs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">О BookStore</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownAboutUs">
-                                <a class="dropdown-item" href="catalogPage.php">Каталог</a>
-                                <a class="dropdown-item" href="adminPage.php">Админка</a>
-                                <a class="dropdown-item" href="aboutUsPage.php">О нас</a>
-                            </div>
+                            <a class="nav-link" href="aboutUsPage.php">О BookStore</a>
                         </li>
                         <li class="nav-item dropdown">
                             <img class="img-fluid d-inline-block align-top icon" src="images/icon/book.svg" alt="">
-                            <a class="nav-link dropdown-toggle" href="catalogPage.php" id="dropdownBooks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Книги</a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown">
-                                <div class="col">
-                                    <div class="row">
-                                        <a class="dropdown-item" href="catalogPage.php">Жанры</a></th>
-                                    </div>
-                                    <?php for($i = 0; $i < count($genre); $i++){?>
-                                        <div class="row"><a <?='href="catalogPage.php?idgenre=' . $genre[$i]['IDGENRE']  . '"';?> class="dropdown-item text-muted"><?=$genre[$i]['GENRE']?></a></div>
-                                    <?php }?>
-                                    <div class="row">
-                                        <a class="dropdown-item" href="catalogPage.php">Издательства</a>
-                                    </div>
-                                    <?php for($i = 0; $i < count($publisher); $i++){?>
-                                        <div class="row"><a <?='href="catalogPage.php?idpublisher=' . $publisher[$i]['IDPUBLISHER']  . '"';?> class="dropdown-item text-muted" href="catalogPage.php"><?=$publisher[$i]['PUBLISHER']?></a></div>
-                                    <?php }?>
-                                </div>
-                            </div>
+                            <a class="nav-link" href="catalogPage.php">Каталог</a>
                         </li>
                         <li class="nav-item dropdown">                            
                             <img class="img-fluid d-inline-block align-top icon" src="images/icon/cart.svg" alt="">

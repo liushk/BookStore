@@ -19,25 +19,29 @@
     <main class="container">
         <div class="container contentcontainer">
             <?php 
-            if(isset($_GET['idbook']) && isAvailableBook(htmlspecialchars($_GET['idbook']))){
-            $book = getBookInfo(htmlspecialchars($_GET['idbook']));?>
+            if(isset($_GET['idbook'])){
+            $book = getBook(htmlspecialchars($_GET['idbook']));
+            if(count($book)<>0){?>
             <div class="row contentcontainerBook">          
                 <div class="col-5 bookCol">
                     <div class="row">
                         <div class="col containerPhotoBook">
                             <img class="img-thumbnail bookImg" <?='src="images/book/' . $book[0]['PHOTO'] . '"';?> alt="">
-                            <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book[0]['IDBOOK'] . '"';?> type="submit">Добавить в корзину</button>
+                            <?php if($book[0]['AVAILABILITY'] == "1"){?>
+                                <button class="btn btn-danger btn-sm addToCart" <?='data-id="' . $book[0]['IDBOOK'] . '"';?> type="submit">Добавить в корзину</button>
+                            <?php } else{?>
+                                <button class="btn btn-danger btn-sm" disabled>Добавить в корзину</button>
+                            <?php }?>  
                         </div>
                     </div>
                 </div>
                 <div class="col-7 bookCol">
-                    <div class="row bookRow">
-                        <div class="col bookField">Название</div>
-                        <div class="col"><h4><?=$book[0]['BOOK'];?></h4></div>              
+                    <div class="row">
+                        <div class="col" style="text-align: center;"><h4>"<?=$book[0]['FULLBOOKNAME'];?>"</h4></div>              
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">Автор(ы)</div>
-                        <div class="col"><h6><?=$book[0]['AUTHORS'];?></h6></div>              
+                        <div class="col"><?=$book[0]['AUTHORS'];?></div>              
                     </div>
                     <div class="row bookRow">
                         <div class="col bookField">ID товара</div>
@@ -60,10 +64,6 @@
                         <div class="col"><?=$book[0]['PAGE'];?> стр.</div>                
                     </div>
                     <div class="row bookRow">
-                        <div class="col bookField">Вес</div>
-                        <div class="col"><?=$book[0]['WEIGHT'];?> г.</div>                
-                    </div>
-                    <div class="row bookRow">
                         <div class="col bookField">Возрастные ограничения</div>
                         <div class="col"><?=$book[0]['AGELIMIT'];?>+</div>                
                     </div>
@@ -78,8 +78,8 @@
                     <div class="row bookRow">
                         <div class="col bookField">В наличии</div>
                         <?php 
-                        if($book[0]['AVAILABILITY'] = '1'){
-                            echo '<div class="col" style="color: #00ca11;">есть</div>';
+                        if($book[0]['AVAILABILITY'] == '1'){
+                            echo '<div class="col" style="color: #00ca11;">да</div>';
                         } else{
                             echo '<div class="col" style="color: #dc3545;">нет</div>';
                         }?>
@@ -95,7 +95,7 @@
             </div>
             <?php } else {?>
             <h4>Такой книги у нас в системе нет :(</h4>
-            <?php }?>          
+            <?php }}?>          
         </div>
     </main>
     <?php 
