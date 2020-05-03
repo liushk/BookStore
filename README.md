@@ -1,2 +1,2 @@
-# BookShop
+# BookStore
  Курсовой проект
