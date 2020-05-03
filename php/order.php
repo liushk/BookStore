@@ -24,8 +24,8 @@ function isAvailableOrderID($idOrder ){
 function insertOrderHeader($idOrder, $customerName, $customerTel, $totalCost){
     require_once $_SERVER['DOCUMENT_ROOT']."/php/db.php";
     $db = new Database();
-    $db->getUpdateOrInsert("INSERT INTO ORDERHEADER(IDORDER, NAME, TELEPHONE, TOTALCOST, IDORDERSTATUS) VALUES 
-    (" . $idOrder . ", '" . $customerName . "', '" . $customerTel . "', " . $totalCost . ", 1);");
+    $db->getUpdateOrInsert("INSERT INTO ORDERHEADER(IDORDER, NAME, TELEPHONE, TOTALCOST) VALUES 
+    (" . $idOrder . ", '" . $customerName . "', '" . $customerTel . "', " . $totalCost . ");");
 }
 
 //добавление записи в строки заказа

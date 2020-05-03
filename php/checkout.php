@@ -20,7 +20,8 @@
                 $idOrder = setOrderID();        
             }
             foreach ($bookCount as $key => $value) {
-                if(isAvailableBook($key)){
+                $info = getBook($key);
+                if(count($info)>0){
                     insertOrderLine($idOrder, $key, getBookCost($key), $value);
                     updateBookPopularity($key);
                     $totalCost += getBookCost($key, $value);
