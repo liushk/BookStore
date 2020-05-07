@@ -16,7 +16,7 @@
                     $bookCount[$key] = (int)$value;       
                 }
             }
-            if(!isAvailableOrderID($idOrder)){
+            while(!isAvailableOrderID($idOrder)){
                 $idOrder = setOrderID();        
             }
             foreach ($bookCount as $key => $value) {
